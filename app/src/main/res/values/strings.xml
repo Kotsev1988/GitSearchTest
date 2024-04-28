@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GitSearchTest</string>
+    <string name="search_screen">Поиск</string>
+    <string name="archive_screen">Архив скачивания</string>
+</resources>
