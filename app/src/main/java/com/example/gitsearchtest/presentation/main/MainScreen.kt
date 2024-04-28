@@ -113,8 +113,6 @@ fun MainScreen() {
                                 Icons.Filled.ArrowBack,
                                 "backIcon")
                         }
-
-
                     }
                 }
             )
@@ -147,7 +145,6 @@ fun MainScreen() {
                         label = {
                             Text(
                                 stringResource(screen.stringId),
-
                                 color = if (selected) Color(0xFF4096FB) else MaterialTheme.colorScheme.onSecondary,
                                 textAlign = TextAlign.Center,
                                 fontSize = 12.sp,
@@ -156,7 +153,6 @@ fun MainScreen() {
                             )
                         },
                         icon = {
-
                             Icon(
                                 painter = screen.icon, contentDescription = screen.label,
                                 tint = if (selected) Color(0xFF4096FB) else MaterialTheme.colorScheme.onSecondary

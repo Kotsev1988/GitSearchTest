@@ -45,8 +45,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.gitsearchtest.R
 import com.example.gitsearchtest.presentation.SharedViewModel
 
-@RequiresApi(Build.VERSION_CODES.TIRAMISU)
-
 @Composable
 fun SearchScreen() {
 
@@ -75,6 +73,10 @@ fun SearchScreen() {
                 onValueChange = {
                     viewModel.handleViewEvent(SearchAppState.EnteredComment(it))
                 },
+                textStyle = TextStyle(
+                    color = MaterialTheme.colorScheme.onPrimary
+                ),
+
                 label = {
                     Text(text = "Enter username")
                 },
@@ -84,7 +86,8 @@ fun SearchScreen() {
             if (isSearching) {
                 Box(modifier = Modifier.fillMaxSize()) {
                     CircularProgressIndicator(
-                        modifier = Modifier.align(Alignment.Center)
+                        modifier = Modifier.align(Alignment.Center),
+                        color = MaterialTheme.colorScheme.onPrimary
                     )
                 }
             } else {
@@ -111,7 +114,7 @@ fun SearchScreen() {
                                 try {
                                     context.startActivity(intent)
                                 } catch (e: ActivityNotFoundException) {
-
+                                    e.printStackTrace()
                                 }
                             }
                         ) {
@@ -171,7 +174,9 @@ fun SearchScreen() {
                                             }
                                         }
                                     }) {
-                                    Icon(painterResource(id = R.drawable.download_icon), "")
+                                    Icon(painterResource(id = R.drawable.download_icon),
+                                        contentDescription = "DownLoad",
+                                        tint = MaterialTheme.colorScheme.onPrimary)
                                 }
                             }
                         }
